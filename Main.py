@@ -29,7 +29,17 @@ def menu():
             print("Reservar habitación")
             cliente = input("Nombre del cliente: ")
             documento = input("Documento del cliente: ")
-            noches = int(input("Número de noches: "))
+            while True:
+                noches = input("Elige una opción (1-100): ")
+                if noches.isdigit():  
+                    noches = int(noches)  
+                    if 1 <= noches <= 100:
+                        print("Opción válida:", noches) 
+                        break  
+                    else:
+                        print("El número debe estar entre 1 y 100.")
+                else:
+                    print("Debes ingresar un número válido.")
             while True:
                 print("Tipos de habitación:")
                 print("1. Estándar ($200000/noche)")
